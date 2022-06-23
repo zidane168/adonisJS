@@ -1,0 +1,100 @@
+Arguments: 
+  /Users/vilh/.nvm/versions/node/v14.17.0/bin/node /Users/vilh/.nvm/versions/node/v14.17.0/bin/yarn add @adonisJS/lucid
+
+PATH: 
+  /Users/vilh/.nvm/versions/node/v14.17.0/bin:/Applications/MAMP/bin/php/php7.4.12/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/MAMP/bin/php/php7.4.12/bin
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  14.17.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@adonisJS%2flucid: Not found
+      at Request.params.callback [as _callback] (/Users/vilh/.nvm/versions/node/v14.17.0/lib/node_modules/yarn/lib/cli.js:66138:18)
+      at Request.self.callback (/Users/vilh/.nvm/versions/node/v14.17.0/lib/node_modules/yarn/lib/cli.js:140883:22)
+      at Request.emit (events.js:376:20)
+      at Request.<anonymous> (/Users/vilh/.nvm/versions/node/v14.17.0/lib/node_modules/yarn/lib/cli.js:141855:10)
+      at Request.emit (events.js:376:20)
+      at IncomingMessage.<anonymous> (/Users/vilh/.nvm/versions/node/v14.17.0/lib/node_modules/yarn/lib/cli.js:141777:12)
+      at Object.onceWrapper (events.js:482:28)
+      at IncomingMessage.emit (events.js:388:22)
+      at endReadableNT (internal/streams/readable.js:1336:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21)
+
+npm manifest: 
+  {
+    "name": "web",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+      "dev": "node ace serve --watch",
+      "build": "node ace build --production",
+      "start": "node server.js",
+      "lint": "eslint . --ext=.ts",
+      "format": "prettier --write ."
+    },
+    "eslintConfig": {
+      "extends": [
+        "plugin:adonis/typescriptApp",
+        "prettier"
+      ],
+      "plugins": [
+        "prettier"
+      ],
+      "rules": {
+        "prettier/prettier": [
+          "error"
+        ]
+      }
+    },
+    "eslintIgnore": [
+      "build"
+    ],
+    "prettier": {
+      "trailingComma": "es5",
+      "semi": false,
+      "singleQuote": true,
+      "useTabs": false,
+      "quoteProps": "consistent",
+      "bracketSpacing": true,
+      "arrowParens": "always",
+      "printWidth": 100
+    },
+    "devDependencies": {
+      "@adonisjs/assembler": "^5.7.0",
+      "@japa/preset-adonis": "^1.1.0",
+      "@japa/runner": "^2.0.9",
+      "@symfony/webpack-encore": "^2.1.0",
+      "adonis-preset-ts": "^2.1.0",
+      "eslint": "^8.17.0",
+      "eslint-config-prettier": "^8.5.0",
+      "eslint-plugin-adonis": "^2.1.0",
+      "eslint-plugin-prettier": "^4.0.0",
+      "pino-pretty": "^8.0.0",
+      "prettier": "^2.6.2",
+      "typescript": "~4.6",
+      "youch": "^3.2.0",
+      "youch-terminal": "^2.1.4"
+    },
+    "dependencies": {
+      "@adonisjs/core": "^5.8.3",
+      "@adonisjs/repl": "^3.1.11",
+      "@adonisjs/session": "^6.4.0",
+      "@adonisjs/shield": "^7.0.11",
+      "@adonisjs/view": "^6.1.5",
+      "proxy-addr": "^2.0.7",
+      "reflect-metadata": "^0.1.13",
+      "source-map-support": "^0.5.21"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

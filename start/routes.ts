@@ -1,0 +1,65 @@
+/*
+|--------------------------------------------------------------------------
+| Routes
+|--------------------------------------------------------------------------
+|
+| This file is dedicated for defining HTTP routes. A single file is enough
+| for majority of projects, however you can define routes in different
+| files and just make sure to import them inside this file. For example
+|
+| Define routes in following two files
+| ├── start/routes/cart.ts
+| ├── start/routes/customer.ts
+|
+| and then import them inside `start/routes.ts` as follows
+|
+| import './routes/cart'
+| import './routes/customer''
+|
+*/
+
+import Route from '@ioc:Adonis/Core/Route'
+import Logger from '@ioc:Adonis/Core/Logger'
+import { Router } from '@adonisjs/core/build/standalone';
+
+// Route.get('/', async ({ view }) => {
+
+//   Logger.info('Welcome Learn Tech Tips');
+//   Logger.warn('I am  Zidane - 雞蛋🥚🥚🥚🥚🥚🥚🥚🥚🥚🥚');
+//   return view.render('welcome')
+// })
+
+
+Route.get('/', ({ request, auth, response, view }) => {
+
+  Logger.info(request.url());
+  Logger.info(request.all());
+
+  return view.render('welcome')
+})
+
+// Route.get('/json', async ({ params, view }) => {
+//   return { 
+//     product_id: 1,
+//     name: 'This is name',
+//     description: 'This is description'
+//   }
+// })
+
+
+// Route.get('/string', async ({ params, view }) => {
+//   return 'I am a string'
+// })
+
+// Route.get('/posts/:postId', async ({ params, request, response }) => {
+//   response.status(200)
+//   return 'I am a string: ' + params.postId
+// })
+
+// ----- controller
+// Route.get('/pets', 'PetsController.index');
+// Route.post('/pets', 'PetsController.store');
+
+// Route.resource('/pets', 'PetsController.store');
+
+Route.resource('/pets', 'PetsController').apiOnly();
