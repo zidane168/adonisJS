@@ -38,8 +38,12 @@ Route.get('/', ({ request, auth, response, view }) => {
 })
 
 
+
 Route.get('register', 'AuthController.registerShow').as('auth.register.show')
+Route.post('register', 'AuthController.register').as('auth.register')
+
 Route.get('login', 'AuthController.loginShow').as('auth.login.show')
+Route.post('login', 'AuthController.login').as('auth.login')
 
 // Route.get('/json', async ({ params, view }) => {
 //   return { 
