@@ -8,9 +8,12 @@ export default class Pet extends BaseModel {
   @column()
   public name: string;
 
+  @column()
+  public price: number;
+
   @column.dateTime({ autoCreate: true })
-  public createdAt: DateTime
+  public created: DateTime
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
-  public updatedAt: DateTime
+  public modified: DateTime
 }
