@@ -14,13 +14,12 @@
 | and then import them inside `start/routes.ts` as follows
 |
 | import './routes/cart'
-| import './routes/customer''
+| import './routes/customer'
 |
 */
 
 import Route from '@ioc:Adonis/Core/Route'
 import Logger from '@ioc:Adonis/Core/Logger'
-import { Router } from '@adonisjs/core/build/standalone';
 
 // Route.get('/', async ({ view }) => {
 
@@ -32,11 +31,15 @@ import { Router } from '@adonisjs/core/build/standalone';
 
 Route.get('/', ({ request, auth, response, view }) => {
 
-  Logger.info(request.url());
-  Logger.info(request.all());
+  // Logger.info(request.url());
+  // Logger.info(request.all());
 
   return view.render('welcome')
 })
+
+
+Route.get('register', 'AuthController.registerShow').as('auth.register.show')
+Route.get('login', 'AuthController.loginShow').as('auth.login.show')
 
 // Route.get('/json', async ({ params, view }) => {
 //   return { 
@@ -63,3 +66,4 @@ Route.get('/', ({ request, auth, response, view }) => {
 // Route.resource('/pets', 'PetsController.store');
 
 Route.resource('/pets', 'PetsController').apiOnly();
+

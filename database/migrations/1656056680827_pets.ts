@@ -1,4 +1,4 @@
-import BaseSchema from '@ioc:AdonisJs/Lucid/Schema'
+import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 
 export default class extends BaseSchema {
   protected tableName = 'pets'
@@ -12,8 +12,8 @@ export default class extends BaseSchema {
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
        */
-      table.timestamp('created', { useTz: true }).defaultTo(this.now())
-      table.timestamp('modified', { useTz: true }).defaultTo(this.now())
+       table.timestamp('created_at', { useTz: true }).nullable()
+       table.timestamp('updated_at', { useTz: true }).nullable()
     })
   }
 

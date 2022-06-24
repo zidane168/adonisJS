@@ -12,8 +12,8 @@ export default class Pet extends BaseModel {
   public price: number;
 
   @column.dateTime({ autoCreate: true })
-  public created: DateTime
+  public created_at: DateTime
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
-  public modified: DateTime
+  public update_at: DateTime
 }

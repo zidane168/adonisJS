@@ -1,0 +1,56 @@
+<style>
+
+    .distance {
+        display: block;
+        min-width: 100px;
+    }
+
+    .mt-10 {
+        margin-top: 10px
+    }
+
+    .border {
+        border: 1px solid black;
+        padding: 10px;
+        box-shadow: 5px 5px rgb(97, 94, 94);
+    }
+
+    .control {
+        min-width: 500px;
+    }
+
+    .mr-10 {
+        margin-right: 10px;
+    }
+
+    .blue {
+        color: blue;
+    }
+
+    .bold {
+        font-weight: bold;
+    }
+</style>
+
+<div style="display: flex; justify-content: center;">
+
+    
+    <form method="POST" class="border">
+        <div>
+            <label class="distance blue bold"> Username Or Email </label>
+            <input type="text" class="control" name="uid">
+        </div>
+
+        <div>
+            <label class="distance blue bold mt-10"> Password </label>
+            <input type="password" class="control" name="password">
+        </div>
+
+
+        <div style="display: flex; justify-content: center;" class="mt-10">
+            <button class="mr-10" type="submit"> Login </button>
+            <button type="submit"> Cancel </button>
+        </div>
+        <a href="https://learn-tech-tips.blogspot.com"> learn-tech-tips </a>
+    </form>
+</div>
