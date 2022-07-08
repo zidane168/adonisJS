@@ -8,6 +8,9 @@ export default class AuthController {
     }
 
     public async register( {request, response, auth }: HttpContextContract) {
+        // console.log(request.requestData)    // show all data
+        console.log(' -------- ')
+
         const userSchema = schema.create({
             username: schema.string({trim: true}, [ rules.unique( {table: 'users', column: 'username', caseInsensitive: true } )] ),
             email: schema.string({trim: true}, [ rules.email(), rules.unique( {table: 'users', column: 'email', caseInsensitive: true } )] ),
@@ -17,8 +20,12 @@ export default class AuthController {
         const data = await request.validate( {schema: userSchema} )
         const user = await User.create(data);
 
-        console.log(user)
-        await auth.login(user)
+        
+
+        console.log(data)
+        // await auth.login(user)
+
+        await auth.login(user);
 
         return response.redirect('/')
     }
