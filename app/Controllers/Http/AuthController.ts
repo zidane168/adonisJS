@@ -20,8 +20,6 @@ export default class AuthController {
         const data = await request.validate( {schema: userSchema} )
         const user = await User.create(data);
 
-        
-
         console.log(data)
         // await auth.login(user)
 
@@ -31,7 +29,7 @@ export default class AuthController {
     }
 
     public async loginShow ({ view }: HttpContextContract) {
-        return view.render('auth/register')
+        return view.render('auth/login')
     }
 
     public async login({request, response, auth, session}: HttpContextContract) {
