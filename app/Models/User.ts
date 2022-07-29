@@ -19,10 +19,10 @@ export default class User extends BaseModel {
   public rememberMeToken?: string
 
   @column.dateTime({ autoCreate: true })
-  public created_at: DateTime
+  public created: DateTime
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
-  public update_at: DateTime
+  public updated: DateTime
 
   @beforeSave()
   public static async hashPassword (user: User) {

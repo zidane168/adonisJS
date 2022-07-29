@@ -1,0 +1,6 @@
+@if (flashMessages.get('notification'))
+    <div class="container notification is-{{ flashMessages.get('notification.type') }}">
+        {{ flashMessages.get('notification.message') }}
+    </div>
+
+@endif
