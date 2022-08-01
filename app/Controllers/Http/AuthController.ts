@@ -48,7 +48,6 @@ export default class AuthController {
         const { username, password } = request.all();
 
         try {
-
             // await auth.remember(!!remember).attempt(email, password)
             await auth.attempt(username, password)
             return response.redirect('/')
@@ -58,14 +57,11 @@ export default class AuthController {
             session.flash({
                 notification: {
                     type: 'danger',
-                    message: `We couldn't verify your credentials`
+                    message: `Your username or email is incorrect`
                 }
             })
-            return response.redirect().back()
+            return response.redirect().back()   // dung yen tai trang nay
         }
-       
-       // return response.redirect('/')
-
     }
 
     public async logout ({ auth, response } : HttpContextContract) {
