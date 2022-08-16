@@ -163,7 +163,7 @@ export default class AuthController {
                 }
             })
 
-            await auth.attempt(req.username, req.password)
+            const user = await auth.attempt(req.username, req.password)
             session.flash({
                 notification: {
                     type: 'success',
@@ -175,7 +175,9 @@ export default class AuthController {
 
             // auth.isAuthenticated 
             // return auth.user;
-            return response.redirect('/profile')
+
+            // return response.redirect('/profile') <- ok
+            return response.redirect(`/${user?.username}`) // <- ok
 
         } catch (error) { 
             session.flash({

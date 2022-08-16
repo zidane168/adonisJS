@@ -74,8 +74,10 @@ Route.get('/', ({ request, auth, response, view }) => {
 Route.on('/register').render('auth/register')
 Route.on('/login').render('auth/login')
 Route.on('/profile').render('auth/profile').middleware('auth')
+Route.on('/profile/edit').render('profile/edit').middleware('auth')
 
-Route.get('/:username', 'ProfilesController.index') 
+Route.get('/:username', 'ProfilesController.index').middleware('auth')
 Route.post('/login', 'AuthController.login') 
 Route.post('/register', 'AuthController.register')
 Route.post('/logout', 'AuthController.logout') 
+Route.post('/profile/update', 'ProfilesController.update').middleware('auth')

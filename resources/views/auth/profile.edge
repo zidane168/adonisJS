@@ -8,13 +8,13 @@
             </div>
             <div class="col-3">
 
-                <img class="avatar" src="" alt="avatar" />
+                <img class="avatar" src={{ auth.user?.avatar }} alt="avatar" />
             </div>
 
             <div class="col-5">
                 <div> 
                     <h3> I am:  {{ auth.user?.username }} </h3> 
-                    <span> <button> Edit Profile </button> </span> 
+                    <span> <a role="button" class="btn btn-large btn-primary" href="/profile/edit"> Edit Profile </a> </span> 
                 </div>
                 <div>
                     <span> 100 posts </span>
