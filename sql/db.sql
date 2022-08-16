@@ -1,16 +1,12 @@
  
-
---
--- Table structure for table `adonis_schema`
---
-
 DROP TABLE IF EXISTS `adonis_schema`;
-CREATE TABLE `adonis_schema` (
-  `id` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `adonis_schema` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `batch` int(11) NOT NULL,
-  `migration_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `migration_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `adonis_schema`
@@ -27,7 +23,7 @@ INSERT INTO `adonis_schema` (`id`, `name`, `batch`, `migration_time`) VALUES
 --
 
 DROP TABLE IF EXISTS `adonis_schema_versions`;
-CREATE TABLE `adonis_schema_versions` (
+CREATE TABLE IF NOT EXISTS `adonis_schema_versions` (
   `version` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -45,12 +41,31 @@ INSERT INTO `adonis_schema_versions` (`version`) VALUES
 --
 
 DROP TABLE IF EXISTS `pets`;
-CREATE TABLE `pets` (
-  `id` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `pets` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `price` decimal(12,0) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `posts`
+--
+
+DROP TABLE IF EXISTS `posts`;
+CREATE TABLE IF NOT EXISTS `posts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `enabled` tinyint(1) NOT NULL DEFAULT '1',
+  `created` datetime DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `updated` datetime DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -60,65 +75,24 @@ CREATE TABLE `pets` (
 --
 
 DROP TABLE IF EXISTS `users`;
-CREATE TABLE `users` (
-  `id` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
+  `avatar` varchar(1024) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(180) NOT NULL,
   `remember_me_token` varchar(255) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
-  `updated` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `updated` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_username_unique` (`username`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `remember_me_token`, `created`, `updated`) VALUES
-(1, 'vilh', 'vilh@gmail.com', '$argon2id$v=19$t=3,m=4096,p=1$D/deO7zIXC1LU1R0mih3Fg$PRK33Pmtrum0s2n77AaSsAVc68DTXcXg9lBB89NZGz0', NULL, '2022-07-29 11:01:19', '2022-07-29 11:01:19');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `adonis_schema`
---
-ALTER TABLE `adonis_schema`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `pets`
---
-ALTER TABLE `pets`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_username_unique` (`username`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `adonis_schema`
---
-ALTER TABLE `adonis_schema`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `pets`
---
-ALTER TABLE `pets`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+INSERT INTO `users` (`id`, `username`, `avatar`, `email`, `password`, `remember_me_token`, `created`, `updated`) VALUES
+(1, 'vilh', 'images/1660645290958.gif', '0', '$argon2id$v=19$t=3,m=4096,p=1$D/deO7zIXC1LU1R0mih3Fg$PRK33Pmtrum0s2n77AaSsAVc68DTXcXg9lBB89NZGz0', NULL, '2022-07-29 11:01:19', '2022-08-16 17:21:30'),
+(3, 'zidane', NULL, 'zidane@gmail.com', '$argon2id$v=19$t=3,m=4096,p=1$cu9QDg0lz9r/tbB11jAdDg$jggcp6qi5Bm4jQ8G44+hQH6lPMD33ISwmExptHMteqE', NULL, '2022-08-16 14:25:57', '2022-08-16 14:25:57');
