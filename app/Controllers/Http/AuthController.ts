@@ -92,10 +92,15 @@ export default class AuthController {
     //     // }
     // }
 
-    public async logout ({ auth, response } : HttpContextContract) {
+    public async logout ({ auth, response, session } : HttpContextContract) {
         await auth.logout()
-
-        return response.route('welcome')
+        session.flash({
+            notification: {
+                type: 'success',
+                message: `Logout successfully`
+            }
+        })
+        return response.redirect('/')
     }
 
 
