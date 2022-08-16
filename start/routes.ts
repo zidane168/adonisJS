@@ -71,12 +71,21 @@ Route.get('/', ({ request, auth, response, view }) => {
 // Route.get('login', 'AuthController.loginShow').as('auth.login.show')
 // Route.post('/login', 'AuthController.login').as('auth.login')
 
+
+// vilh start/kernel.ts - add below auth
+// Server.middleware.registerNamed({
+//   auth: 'App/Middleware/Auth'
+// })
+
+
 Route.on('/register').render('auth/register')
 Route.on('/login').render('auth/login')
 Route.on('/profile').render('auth/profile').middleware('auth')
 Route.on('/profile/edit').render('profile/edit').middleware('auth')
 
 Route.get('/:username', 'ProfilesController.index').middleware('auth')
+Route.get('/posts/create', 'PostsController.create').middleware('auth');
+
 Route.post('/login', 'AuthController.login') 
 Route.post('/register', 'AuthController.register')
 Route.post('/logout', 'AuthController.logout') 

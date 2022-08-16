@@ -99,3 +99,5 @@ INSERT INTO `users` (`id`, `username`, `avatar`, `email`, `password`, `remember_
 
 
 ALTER TABLE `users` ADD `bio` TEXT NULL AFTER `username`;
+ALTER TABLE `posts` ADD `image` VARCHAR(1024) NULL AFTER `user_id`, ADD `caption` TEXT NULL AFTER `image`;
+
