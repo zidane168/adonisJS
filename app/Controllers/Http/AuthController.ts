@@ -50,6 +50,12 @@ export default class AuthController {
         try {
             // await auth.remember(!!remember).attempt(email, password)
             await auth.attempt(username, password)
+            session.flash({
+                notification: {
+                    type: 'success',
+                    message: `Your username or email is incorrect`
+                }
+            })
             return response.redirect('/')
 
         } catch (error) {
