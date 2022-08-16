@@ -44,15 +44,21 @@
     {{--  @include('partials._notification')  --}}
 
     <div style="display: flex; justify-content: center;">
-        <form method="POST" class="border" action={{ route('/login') }}>
+        <form  class="border" method="POST" action='/login'>
             <div>
                 <label class="distance blue bold"> Username </label>
                 <input type="text" class="control" name="username">
+                @if (flashMessages.has('errors.username')) 
+                    <small> {{ flashMessages.get('errors.username') }} </small>
+                @endif
             </div>
 
             <div>
                 <label class="distance blue bold mt-10"> Password </label>
                 <input type="password" class="control" name="password">
+                @if (flashMessages.has('errors.password')) 
+                    <small> {{ flashMessages.get('errors.password') }} </small>
+                @endif
             </div>
 
 

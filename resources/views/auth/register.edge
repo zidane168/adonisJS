@@ -49,13 +49,13 @@
         <!-- https://www.youtube.com/watch?v=AXAJGHQBNkg -->
 
         {{--  https://www.youtube.com/watch?v=VNwhqiu_oRk 19:22   --}}
-        <form method="POST" class="border" action='/register' >
+        <form class="border" method="POST" action='/register' >
 
             <div>
                 <label for="username" class="distance blue bold"> Username </label>
                 <input type="text" class="control" name="username" required >
-                @if (flashMessages.has('errors.name')) 
-                    <small> {{ flashMessages.get('errors.name') }} </small>
+                @if (flashMessages.has('errors.username')) 
+                    <small> {{ flashMessages.get('errors.username') }} </small>
                 @endif
             </div>
             <div>
