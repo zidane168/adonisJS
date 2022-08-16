@@ -1,0 +1,15 @@
+@layout('layouts/app')
+
+@section('content')
+    @set('title', 'Profile')
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3> I am profile </h3>
+                {{--  {{ auth.isAuthenticated }}  --}}
+                {{ auth.user?.username }}
+            </div>
+        </div>
+    </div>
+@endsection
+

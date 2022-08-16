@@ -68,13 +68,14 @@ Route.get('/', ({ request, auth, response, view }) => {
 
 // Route.get('register', 'AuthController.registerShow').as('auth.register.show')
 // Route.post('/register', 'AuthController.register').as('auth.register')
-
-Route.on('/register').render('auth/register')
-Route.post('/register', 'AuthController.register') 
-
 // Route.get('login', 'AuthController.loginShow').as('auth.login.show')
 // Route.post('/login', 'AuthController.login').as('auth.login')
-Route.on('/login').render('auth/login')
-Route.post('/login', 'AuthController.login') 
 
-Route.post('logout', 'AuthController.logout').as('auth.logout')
+Route.on('/register').render('auth/register')
+Route.on('/login').render('auth/login')
+Route.on('/profile').render('auth/profile').middleware('auth')
+
+
+Route.post('/login', 'AuthController.login') 
+Route.post('/register', 'AuthController.register')
+Route.post('/logout', 'AuthController.logout') 

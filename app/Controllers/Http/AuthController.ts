@@ -4,7 +4,6 @@ import User from "App/Models/User"
 
 export default class AuthController {
 
-
     // public async registerShow( { view }: HttpContextContract ) {
     //     console.log('registerShow')
     //     return view.render('auth/register')
@@ -169,7 +168,9 @@ export default class AuthController {
             // const user = await User.findByOrFail('username', req.username)
             // return user;
 
-            return response.redirect('/')
+            // auth.isAuthenticated 
+            // return auth.user;
+            return response.redirect('/profile')
 
         } catch (error) { 
             session.flash({
