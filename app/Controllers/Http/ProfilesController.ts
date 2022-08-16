@@ -26,7 +26,7 @@ export default class ProfilesController {
             return 'Please upload file!'
         } 
  
-        user.email = request.only(['email']) 
+        user.bio = request.input('bio') 
 
         const imageName  = new Date().getTime().toString() + `.${avatar.extname}`
 
