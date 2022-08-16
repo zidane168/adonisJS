@@ -29,23 +29,6 @@ import Logger from '@ioc:Adonis/Core/Logger'
 // })
 
 
-Route.get('/', ({ request, auth, response, view }) => {
-
-  // Logger.info(request.url());
-  // Logger.info(request.all());
-
-  return view.render('welcome')
-})
-
-
-
-Route.get('register', 'AuthController.registerShow').as('auth.register.show')
-Route.post('register', 'AuthController.register').as('auth.register')
-
-Route.get('login', 'AuthController.loginShow').as('auth.login.show')
-Route.post('login', 'AuthController.login').as('auth.login')
-
-Route.post('logout', 'AuthController.logout').as('auth.logout')
 
 // Route.get('/json', async ({ params, view }) => {
 //   return { 
@@ -73,3 +56,25 @@ Route.post('logout', 'AuthController.logout').as('auth.logout')
 
 Route.resource('/pets', 'PetsController').apiOnly();
 
+
+
+Route.get('/', ({ request, auth, response, view }) => {
+
+  // Logger.info(request.url());
+  // Logger.info(request.all());
+
+  return view.render('welcome')
+})
+
+// Route.get('register', 'AuthController.registerShow').as('auth.register.show')
+// Route.post('/register', 'AuthController.register').as('auth.register')
+
+Route.on('/register').render('auth/register')
+Route.post('/register', 'AuthController.register') 
+
+// Route.get('login', 'AuthController.loginShow').as('auth.login.show')
+// Route.post('/login', 'AuthController.login').as('auth.login')
+Route.on('/login').render('auth/login')
+Route.post('/login', 'AuthController.login') 
+
+Route.post('logout', 'AuthController.logout').as('auth.logout')

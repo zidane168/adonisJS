@@ -1,4 +1,4 @@
-@layout('layouts.app')
+@layout('layouts/app')
 
 @section('content')
     @set('title', 'Login')
@@ -41,10 +41,10 @@
         Welcome Back
     </h3>
 
-    @include('partials._notification')
+    {{--  @include('partials._notification')  --}}
 
     <div style="display: flex; justify-content: center;">
-        <form method="POST" class="border" action={{ route('auth.login') }}>
+        <form method="POST" class="border" action={{ route('/login') }}>
             <div>
                 <label class="distance blue bold"> Username </label>
                 <input type="text" class="control" name="username">
