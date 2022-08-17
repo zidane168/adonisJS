@@ -46,13 +46,21 @@
 
         <div class="post-border"> 
             
-            <div class="d-flex align-items-center">  
-                <img src={{ user.avatar }} alt="" class="post-avatar"/>
-                <p class="post-username"> {{ user.username }} </p>
+            <div class="d-flex justify-content-space-between">  
+                <div class="d-flex align-items-center"> 
+                    <img src={{ user.avatar }} alt="" class="post-avatar"/>
+                    <p class="post-username"> {{ user.username }} </p>
+                </div>
+                <div class="">  
+                    <button class="btn btn-secondary mt-10"> ... </button>
+                </div>
             </div> 
             
             <img class="post-image" src="{{ post.image }}" alt=""  />
-            <h5 class="bold post-caption mb-20"> {{ post.caption }} </h5> 
+            <div class="d-flex justify-content-space-between mb-20 footer-post">
+                <h6 class="mt-10 grey"> {{ post.created.toFormat('yyyy/MM/dd HH:mm') }} </h6> 
+                <h6 class="bold post-caption "> {{ post.caption }} </h6> 
+            </div>
         </div>
 
         @endeach
