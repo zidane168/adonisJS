@@ -42,16 +42,20 @@
             </div>
         </div>
 
-        <div class="row text-align-center">
-           
-            @each (post in user.posts)
-            <div class="col-4 mt-20"> 
-                <img class="post" src="{{ post.image }}" alt=""  />
-                <h5 class="bold caption"> {{ post.caption }} </h5>
-            </div> 
-            @endeach
+        @each (post in user.posts)
+
+        <div class="post-border"> 
             
+            <div class="d-flex align-items-center">  
+                <img src={{ user.avatar }} alt="" class="post-avatar"/>
+                <p class="post-username"> {{ user.username }} </p>
+            </div> 
+            
+            <img class="post-image" src="{{ post.image }}" alt=""  />
+            <h5 class="bold post-caption mb-20"> {{ post.caption }} </h5> 
         </div>
+
+        @endeach
     </div>
 @endsection
 
