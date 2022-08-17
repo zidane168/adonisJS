@@ -108,12 +108,18 @@
     border-radius: 200px;
 }
 
-@for $i from 10 through 30 {
+@for $i from 5 through 30 {
     .mb-#{$i} {
         margin-bottom: #{$i}px;
     }
     .mt-#{$i} {
         margin-top: #{$i}px;
+    }
+    .ml-#{$i} {
+        margin-left: #{$i}px;
+    }
+    .mr-#{$i} {
+        margin-right: #{$i}px;
     }
 }
 

@@ -7,14 +7,18 @@
             <div class="col-2">
             </div>
             <div class="col-3">
-
-                <img class="avatar" src={{ auth.user?.avatar }} alt="avatar" />
+                <img class="avatar" src={{ user.avatar }} alt="avatar" />
             </div>
 
             <div class="col-5">
-                <div> 
-                    <h3> I am:  {{ auth.user?.username }} </h3> 
-                    <span> <a role="button" class="btn btn-large btn-primary" href="/profile/edit"> Edit Profile </a> </span> 
+                <div class="d-flex"> 
+                    <h3> I am:  {{ user.username }} </h3> 
+
+                    @if (auth.isAuthenticated && auth.user.id === user.id) 
+                    <span class="ml-10"> <a role="button" class="btn btn-large btn-primary" href="/profile/edit"> Edit Profile </a> </span> 
+                    @else 
+                    <span class="ml-10"> <a role="button" class="btn btn-large btn-primary" href="/profile/follow"> Follow </a> </span> 
+                    @endif
                 </div>
                 <div>
                     <span> 100 posts </span>
@@ -22,9 +26,11 @@
                     <span style="margin-left: 20px"> 10 followings  </span>
                 </div>
 
+                @if (user.bio)
                 <div class="bio">
-                    <span > {{ auth.user?.bio }} </span> 
+                    <span > {{  user.bio }} </span> 
                 </div>
+                @endif
             </div>
             <div class="col-2">
             </div>
@@ -34,10 +40,11 @@
         <div class="row text-align-center" style="margin-bottom: 10px">
             <div class="col-12">
                 <h5> POSTS 
+                    @if (auth.isAuthenticated && auth.user.id === user.id) 
                     <span class="">
-                        <a role="button" class="btn btn-primary" href="/posts/create">  +  </a>
+                        <a role="button" class="btn btn-primary" href="/posts/create">  + Create   </a>
                     </span> 
-
+                    @endif
                 </h5>
             </div>
         </div>
