@@ -5,6 +5,15 @@ export default class Post extends BaseModel {
   @column({ isPrimary: true })
   public id: number
 
+  @column( )
+  public caption: string
+
+  @column()
+  public image: string
+
+  @column()
+  public user_id: number
+
   @column.dateTime({ autoCreate: true })
   public created: DateTime
 

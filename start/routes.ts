@@ -90,3 +90,4 @@ Route.post('/login', 'AuthController.login')
 Route.post('/register', 'AuthController.register')
 Route.post('/logout', 'AuthController.logout') 
 Route.post('/profile/update', 'ProfilesController.update').middleware('auth')
+Route.post('/posts/store', 'PostsController.store').middleware('auth');

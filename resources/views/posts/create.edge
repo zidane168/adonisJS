@@ -7,18 +7,18 @@
         Create Post
     </h3>
 
-    @include('partials._notification') 
+    @include('partials/_notification') 
 
     <div style="display: flex; justify-content: center;">
-        <form  class="border" method="POST" enctype="multipart/form-data" action='/posts/create'>
+        <form  class="border" method="POST" enctype="multipart/form-data" action='/posts/store'>
             <div>
                 <label class="distance blue bold"> Upload your post photo </label>
-                <input type="file" name="photo" /> 
+                <input type="file" name="image" /> 
             </div>
 
             <div>
                 <label class="distance blue bold mt-10"> Caption </label>
-                <input   class="control"  placeholder="input your bio here" name="caption" /> 
+                <input   class="control"  placeholder="input your Caption here" name="caption" /> 
             </div>
 
             <div style="display: flex; justify-content: center;" class="mt-10">
