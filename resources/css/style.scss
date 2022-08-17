@@ -71,15 +71,19 @@
 }
 
 .post-image {
-    border: 1px solid var(--main-color);
+    border: 1px solid white;
     width: 100%;
     display: block; 
     margin: 0 auto;
 }
 
-.post-border {
-    border: 1px solid grey;
+.post-box {
+    width: 80%;
+    border: 10px solid white;
     margin-bottom: 20px;
+    background-color: white; 
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .post-avatar {
@@ -100,8 +104,8 @@
     height:  var(--post-avatar-height);
 }
 
-.avatar {
-    border: 1px solid var(--main-color);
+.avatar { 
+    background-color: white;
     width: 200px;
     height: 200px;
     display: block;
