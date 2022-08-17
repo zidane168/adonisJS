@@ -44,9 +44,12 @@
 
         <div class="row text-align-center">
            
-            <div class="col-4"> 
-                <img class="post" src="" alt=""  />
+            @each (post in user.posts)
+            <div class="col-4 mt-20"> 
+                <img class="post" src="{{ post.image }}" alt=""  />
+                <h5 class="bold caption"> {{ post.caption }} </h5>
             </div> 
+            @endeach
             
         </div>
     </div>
