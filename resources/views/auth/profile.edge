@@ -16,8 +16,21 @@
 
                     @if (auth.isAuthenticated && auth.user.id === user.id) 
                         <span class="ml-10"> <a role="button" class="btn btn-large btn-primary" href="/profile/edit"> Edit Profile </a> </span> 
+                    
                     @else 
-                        <span class="ml-10"> <a role="button" class="btn btn-large btn-primary" href="/profile/follow"> Follow </a> </span> 
+
+                        {{--  {{inspect(auth.user.followings.map(f => f.following_id))}}  // debug on UI --}}
+                        
+                        @if (auth.user.followings.map(f => f.following_id).includes(user.id))
+                            <form action="{{`/follow/${user.id}?_method=delete`}}" method="post">
+                                <button type="submit" class="ml-10 btn btn-large btn-primary"> UnFollow  </button> 
+                            </form>
+
+                        @else 
+                            <form action="{{`/follow/${user.id}`}}" method="post">
+                                <button type="submit" class="ml-10 btn btn-large btn-primary"> Follow  </button> 
+                            </form>
+                        @endif
                     @endif
                 </div>
                 <div>

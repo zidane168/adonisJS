@@ -3,10 +3,11 @@
 import Application from '@ioc:Adonis/Core/Application'
 import { HttpContextContract  } from "@ioc:Adonis/Core/HttpContext"
 import User from "App/Models/User"
+import authConfig from 'Config/auth'
 // import { UserFactory } from 'Database/factories'
 
 export default class ProfilesController {
-    public async index({ view, params } : HttpContextContract) {
+    public async index({ view, params, auth } : HttpContextContract) {
         const username = params.username
        // const user = await User.findBy('username', username).preload('posts)
 
@@ -20,11 +21,16 @@ export default class ProfilesController {
             .preload('posts', (query) => {
                 query.where('enabled', 1)
                     .select('id', 'image', 'caption', 'created')
-            }).first()  // remember it (if not will return array)
+            })
+            .first()  // remember it (if not will return array)
  
         if (!user) {
             return view.render('errors.not-found')
         }  
+
+        await auth.user.preload('followings', (query) => {
+            query.where('enabled', 1)
+        })
         return view.render('auth/profile', { user })
     }
 

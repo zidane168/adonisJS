@@ -17,11 +17,11 @@ export const UserFactory = Factory.define(User, ({ faker }) => {
 .build()
 
 
-// export const PostFactory = Factory.define(Post, ({ faker }) => {
-//     return {
-//         caption: faker.lorem.paragraph(),
-//         image: faker.image.fashion(),
-//     }
-// })
-// .relation('user', () => UserFactory)
-// .build()
+export const PostFactory = Factory.define(Post, ({ faker }) => {
+    return {
+        caption: faker.lorem.paragraph(),
+        image: faker.image.fashion(),
+    }
+})
+.relation('user', () => UserFactory)
+.build()
