@@ -16,10 +16,12 @@ export default class ProfilesController {
             .query()
             .where('username', username)
             .andWhere('enabled', true)
+            .select('id', 'username', 'bio', 'avatar', 'email')
             .preload('posts', (query) => {
                 query.where('enabled', 1)
+                    .select('id', 'image', 'caption', 'created')
             }).first()  // remember it (if not will return array)
-
+ 
         if (!user) {
             return view.render('errors.not-found')
         }  
