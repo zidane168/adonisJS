@@ -42,6 +42,7 @@
    --main-color: rgb(159, 27, 148);
    --second-color: rgb(229, 101, 219);
    --post-avatar-height: 50px;
+   --height-footer: 100px;
 }
 
 #main-title {
@@ -131,7 +132,8 @@
     margin-top: 10px;
     border: 1px solid var(--main-color);
     box-shadow: 3px 3px var(--second-color);
-    height: 100px;
+    min-height: 100px;
+  
     padding: 10px;
     border-radius: 5px; 
     font-weight: bold;
@@ -189,10 +191,11 @@
 }
 
 #content {
-    padding-bottom: 200px;
+    padding-bottom: var(--height-footer);
 }
 
 footer {
     position: absolute;
     bottom: 0;
+    height: var(--height-footer);
 }
