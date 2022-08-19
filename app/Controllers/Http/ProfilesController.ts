@@ -2,8 +2,7 @@
  
 import Application from '@ioc:Adonis/Core/Application'
 import { HttpContextContract  } from "@ioc:Adonis/Core/HttpContext"
-import User from "App/Models/User"
-import authConfig from 'Config/auth'
+import User from "App/Models/User" 
 // import { UserFactory } from 'Database/factories'
 
 export default class ProfilesController {

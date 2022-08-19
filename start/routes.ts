@@ -58,13 +58,13 @@ Route.resource('/pets', 'PetsController').apiOnly();
 
 
 
-Route.get('/', ({ request, auth, response, view }) => {
+// Route.get('/', ({ request, auth, response, view }) => {
 
-  // Logger.info(request.url());
-  // Logger.info(request.all());
+//   // Logger.info(request.url());
+//   // Logger.info(request.all());
 
-  return view.render('welcome')
-})
+//   return view.render('welcome')
+// })
 
 // Route.get('register', 'AuthController.registerShow').as('auth.register.show')
 // Route.post('/register', 'AuthController.register').as('auth.register')
@@ -94,3 +94,5 @@ Route.post('/posts/store', 'PostsController.store').middleware('auth');
 
 Route.post('/follow/:user_id', 'FollowsController.store').middleware('auth');
 Route.delete('/follow/:user_id', 'FollowsController.destroy').middleware('auth')
+
+Route.get('/', 'HomesController.index')

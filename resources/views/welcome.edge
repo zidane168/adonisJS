@@ -4,10 +4,37 @@
   @set('title', 'Welcome')
   
   <div class="container">
-    <div class="row">
+    {{--  <div class="row">
       <div class="col-12">
         <h3 id="main-title"> Welcome to Instagram Clone - by Zidane </h3>
       </div>
+    </div>  --}}
+
+    @each (post in posts)
+
+    <div class="post-box"> 
+        
+        <div class="d-flex justify-content-space-between">  
+            <a href="/{{ post.user.username }}" class='a-user'>
+              <div class="d-flex align-items-center"> 
+              
+                  <img src={{ post.user.avatar }} alt="" class="post-avatar"/>
+                  <p class="post-username"> {{ post.user.username }} </p>
+              
+              </div>
+            </a>
+            <div class="">  
+                <button class="btn btn-secondary mt-10"> ... </button>
+            </div>
+        </div> 
+        
+        <img class="post-image" src="{{ post.image }}" alt=""  />
+        <div class="d-flex justify-content-space-between mb-20 footer-post">
+            <h6 class="mt-10 grey"> {{ post.created.toFormat('yyyy/MM/dd HH:mm') }} </h6> 
+            <h6 class="bold grey"> {{ post.caption }} </h6> 
+        </div>
     </div>
+
+    @endeach
   </div>
 @endsection

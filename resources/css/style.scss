@@ -199,3 +199,9 @@ footer {
     bottom: 0;
     height: var(--height-footer);
 }
+
+.a-user {
+    &:hover {
+        list-style-type: none;
+    }
+}
