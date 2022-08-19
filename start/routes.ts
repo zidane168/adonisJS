@@ -91,4 +91,6 @@ Route.post('/register', 'AuthController.register')
 Route.post('/logout', 'AuthController.logout') 
 Route.post('/profile/update', 'ProfilesController.update').middleware('auth')
 Route.post('/posts/store', 'PostsController.store').middleware('auth');
+
 Route.post('/follow/:user_id', 'FollowsController.store').middleware('auth');
+Route.delete('/follow/:user_id', 'FollowsController.destroy').middleware('auth')

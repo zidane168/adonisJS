@@ -35,8 +35,9 @@
                 </div>
                 <div>
                     <span> {{ user.posts.length }} posts </span>
-                    <span style="margin-left: 20px"> 1000 followers </span>
-                    <span style="margin-left: 20px"> 10 followings  </span>
+                    <span style="margin-left: 20px"> {{ followers }} followers </span>
+ 
+                    <span style="margin-left: 20px"> {{ auth.user.followings.length }} followings  </span> 
                 </div>
 
                 @if (user.bio)

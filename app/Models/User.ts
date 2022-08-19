@@ -52,6 +52,10 @@ export default class User extends BaseModel {
   }) 
   public followings: HasMany<typeof Following>
 
+  public async followers() {
+    const follower = await Following.query().where('following_id', this.id)
+    return follower.length
+  }
 
   // @hasOne(() => Profile) // 1 - 1
   // public profile: HasOne<typeof Profile>

@@ -22,6 +22,9 @@ export default class ProfilesController {
                 query.where('enabled', 1)
                     .select('id', 'image', 'caption', 'created')
             })
+            .preload('followings', (query) => {
+                query.where('enabled', 1)
+            })
             .first()  // remember it (if not will return array)
  
         if (!user) {
@@ -31,7 +34,10 @@ export default class ProfilesController {
         await auth.user.load('followings', (query) => {
             query.where('enabled', 1)
         })
-        return view.render('auth/profile', { user })
+
+        // get followers user
+        const followers = await auth.user?.followers();
+        return view.render('auth/profile', { user, followers })
     }
 
     public async edit({ view } : HttpContextContract) {
