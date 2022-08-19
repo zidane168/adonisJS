@@ -28,7 +28,7 @@ export default class ProfilesController {
             return view.render('errors.not-found')
         }  
 
-        await auth.user.preload('followings', (query) => {
+        await auth.user.load('followings', (query) => {
             query.where('enabled', 1)
         })
         return view.render('auth/profile', { user })
