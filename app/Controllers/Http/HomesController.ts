@@ -27,6 +27,8 @@ export default class HomesController {
                 })
                 .limit(10)
 
+        // return { auth, posts }
+
         return view.render('welcome', { posts })
     }
 }

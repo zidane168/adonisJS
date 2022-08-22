@@ -23,8 +23,14 @@
               
               </div>
             </a>
-            <div class="">  
+
+          
+            <div style="position: relative">  
                 <button class="btn btn-secondary mt-10"> ... </button>
+
+                @if (auth.isAuthenticated && auth.user.id === post.user.id)  
+                  <div style="position: absolute; "> Delete </div>
+                @endif
             </div>
         </div> 
         

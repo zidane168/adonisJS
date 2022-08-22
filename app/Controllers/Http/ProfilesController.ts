@@ -10,7 +10,7 @@ export default class ProfilesController {
         const username = params.username
        // const user = await User.findBy('username', username).preload('posts)
 
-       // await UserFactory.with('posts', 5).createMany(10)
+       // await UserFactory.with('posts', 5).createMany(10) // auto generate data
 
         const user = await User
             .query()
