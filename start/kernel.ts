@@ -41,5 +41,6 @@ Server.middleware.register([() => import('@ioc:Adonis/Core/BodyParser')])
 
 // vilh
 Server.middleware.registerNamed({
-    auth: 'App/Middleware/Auth'
+    auth: 'App/Middleware/Auth',
+    silentAuth: 'App/Middleware/SilentAuth'
 })

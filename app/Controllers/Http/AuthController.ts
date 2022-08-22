@@ -163,7 +163,8 @@ export default class AuthController {
                 }
             })
 
-            const user = await auth.attempt(req.username, req.password)
+            const rememberMe = true
+            const user = await auth.attempt(req.username, req.password, rememberMe)
             session.flash({
                 notification: {
                     type: 'success',

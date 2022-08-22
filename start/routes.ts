@@ -83,16 +83,26 @@ Route.on('/login').render('auth/login')
 Route.on('/profile').render('auth/profile').middleware('auth')
 Route.on('/profile/edit').render('profile/edit').middleware('auth')
 
+// https://docs.adonisjs.com/guides/auth/middleware
+// The silent auth middleware silently checks if the user is logged-in or not. The request still continues as usual, even when the user is not logged-in.
+// This middleware is helpful when you want to render a public webpage, but also show the currently logged in user details somewhere in the page (maybe the header).
+// dung middleware('silentAuth')  de co the show login data username on trang homepage, show ten auth khi da login 
+
+Route.on('/introduce').render('introduces/index').middleware('silentAuth')   
+
+// dung middleware('auth') de force user login when chua co thong tin login
+
 Route.get('/:username', 'ProfilesController.index').middleware('auth')
 Route.get('/posts/create', 'PostsController.create').middleware('auth');
+Route.get('/', 'HomesController.index').middleware('silentAuth')
+
 
 Route.post('/login', 'AuthController.login') 
 Route.post('/register', 'AuthController.register')
 Route.post('/logout', 'AuthController.logout') 
 Route.post('/profile/update', 'ProfilesController.update').middleware('auth')
 Route.post('/posts/store', 'PostsController.store').middleware('auth');
-
 Route.post('/follow/:user_id', 'FollowsController.store').middleware('auth');
-Route.delete('/follow/:user_id', 'FollowsController.destroy').middleware('auth')
 
-Route.get('/', 'HomesController.index')
+
+Route.delete('/follow/:user_id', 'FollowsController.destroy').middleware('auth')

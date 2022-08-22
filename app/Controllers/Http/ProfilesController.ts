@@ -35,7 +35,7 @@ export default class ProfilesController {
         })
 
         // get followers user
-        const followers = await auth.user?.followers();
+        const followers = await auth.user?.followers(); 
         return view.render('auth/profile', { user, followers })
     }
 
