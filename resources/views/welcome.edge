@@ -24,12 +24,15 @@
               </div>
             </a>
 
-          
-            <div style="position: relative">  
+            <div class="post-point" >  
                 <button class="btn btn-secondary mt-10"> ... </button>
 
                 @if (auth.isAuthenticated && auth.user.id === post.user.id)  
-                  <div style="position: absolute; "> Delete </div>
+                  <div class="post-setting hidden"> 
+                    <form action="{{`/posts/${post.id}?_method=delete`}}" method="post">
+                        <button type="submit" class=" btn btn-large btn-secondary"> Delete  </button> 
+                    </form> 
+                  </div>
                 @endif
             </div>
         </div> 

@@ -53,4 +53,20 @@ export default class PostsController {
         })
         return response.redirect(`/${auth.user.username}`)
     }
+
+    public async destroy({ params, response, auth, session }: HttpContextContract) {
+        const post = Post.query()
+            .where('user_id', auth.user.id)
+            .andWhere('id', params.post_id) 
+
+        await post.delete()
+        session.flash({
+            notification: {
+                type: 'success',
+                message: 'Posts was deleted!'
+            }
+        })
+        return response.redirect('/')
+
+    }
 }

@@ -106,3 +106,5 @@ Route.post('/follow/:user_id', 'FollowsController.store').middleware('auth');
 
 
 Route.delete('/follow/:user_id', 'FollowsController.destroy').middleware('auth')
+
+Route.delete('/posts/:post_id', 'PostsController.destroy').middleware('auth')

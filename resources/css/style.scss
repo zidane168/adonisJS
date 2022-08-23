@@ -205,3 +205,20 @@ footer {
         list-style-type: none;
     }
 }
+
+.post-point {
+    position: relative;
+    &:hover .post-setting {
+        display: block;
+    }
+
+}
+
+.post-setting {
+    position: absolute;
+    z-index: 1;
+}
+
+.hidden {
+    display: none;
+}
