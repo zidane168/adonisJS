@@ -1,6 +1,7 @@
 import { HttpContextContract  } from "@ioc:Adonis/Core/HttpContext"
 import { schema, rules } from "@ioc:Adonis/Core/Validator"
 import User from "App/Models/User"
+import Logger from '@ioc:Adonis/Core/Logger'
 
 export default class AuthController {
 
@@ -154,7 +155,7 @@ export default class AuthController {
                     username: schema.string(),
                     password: schema.string({}, [
                         rules.minLength(6)
-                    ]) 
+                    ]), 
                 }),
                 messages: { 
                     'username.required': 'Username field is required',
@@ -163,8 +164,10 @@ export default class AuthController {
                 }
             })
 
-            const rememberMe = true
-            const user = await auth.attempt(req.username, req.password, rememberMe)
+            const remember = request.only(['remember'])
+ 
+            Logger.info('remember: ', remember); 
+            const user = await auth.attempt(req.username, req.password, remember)
             session.flash({
                 notification: {
                     type: 'success',

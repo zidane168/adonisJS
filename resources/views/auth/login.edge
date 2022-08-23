@@ -9,30 +9,36 @@
 
     {{--  @include('partials._notification')  --}}
 
-    <div style="display: flex; justify-content: center;">
+    <div style="display: flex; justify-content: center;" class=" mb-30">
         <form  class="border" method="POST" action='/login'>
             <div>
-                <label class="distance blue bold"> Username </label>
-                <input type="text" class="control" name="username">
+                <label class="distance blue bold" for='username'> Username </label>
+                <input type="text" class="form-control" name="username" id="username">
                 @if (flashMessages.has('errors.username')) 
                     <small> {{ flashMessages.get('errors.username') }} </small>
                 @endif
             </div>
 
             <div>
-                <label class="distance blue bold mt-10"> Password </label>
-                <input type="password" class="control" name="password">
+                <label class="distance blue bold mt-10"  for='password'> Password </label>
+                <input type="password" class="form-control" name="password" id="password">
                 @if (flashMessages.has('errors.password')) 
                     <small> {{ flashMessages.get('errors.password') }} </small>
                 @endif
             </div>
 
+            <div> 
+                <input type="checkbox" class="blue bold mt-20" name="remember" id="remember" /> Remember me 
+            </div>
 
             <div style="display: flex; justify-content: center;" class="mt-10">
                 <button class="btn btn-primary mr-10" type="submit"> Login </button>
-                <a href="/" role="button" class="btn btn-secondary"> Cancel </button>
+                <a href="/" role="button" class="btn btn-secondary"> Cancel </a>
             </div>
-            <a href="https://learn-tech-tips.blogspot.com"> learn-tech-tips.blogspot.com </a>
+
+            <div class="mt-20"> 
+                <a  href="https://learn-tech-tips.blogspot.com"> learn-tech-tips.blogspot.com </a>
+            </div>
         </form>
     </div>
-@endsection
+@endsection 
