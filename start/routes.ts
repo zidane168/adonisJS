@@ -96,7 +96,6 @@ Route.get('/:username', 'ProfilesController.index').middleware('auth')
 Route.get('/posts/create', 'PostsController.create').middleware('auth');
 Route.get('/', 'HomesController.index').middleware('silentAuth')
 
-
 Route.post('/login', 'AuthController.login') 
 Route.post('/register', 'AuthController.register')
 Route.post('/logout', 'AuthController.logout') 
@@ -104,7 +103,8 @@ Route.post('/profile/update', 'ProfilesController.update').middleware('auth')
 Route.post('/posts/store', 'PostsController.store').middleware('auth');
 Route.post('/follow/:user_id', 'FollowsController.store').middleware('auth');
 
-
 Route.delete('/follow/:user_id', 'FollowsController.destroy').middleware('auth')
-
 Route.delete('/posts/:post_id', 'PostsController.destroy').middleware('auth')
+
+// ---- CMS Dashboard ----
+Route.on('/cms').render('cms/index')
