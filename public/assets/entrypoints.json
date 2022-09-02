@@ -8,6 +8,14 @@
         "http://localhost:8080/assets/app.js"
       ]
     },
+    "cms": {
+      "css": [
+        "http://localhost:8080/assets/cms.css"
+      ],
+      "js": [
+        "http://localhost:8080/assets/cms.js"
+      ]
+    },
     "style": {
       "css": [
         "http://localhost:8080/assets/style.css"

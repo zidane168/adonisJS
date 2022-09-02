@@ -78,6 +78,9 @@ Route.resource('/pets', 'PetsController').apiOnly();
 // })
 
 
+// ---- CMS Dashboard ----
+Route.on('/cms').render('cms/index')
+
 Route.on('/register').render('auth/register')
 Route.on('/login').render('auth/login')
 Route.on('/profile').render('auth/profile').middleware('auth')
@@ -105,6 +108,3 @@ Route.post('/follow/:user_id', 'FollowsController.store').middleware('auth');
 
 Route.delete('/follow/:user_id', 'FollowsController.destroy').middleware('auth')
 Route.delete('/posts/:post_id', 'PostsController.destroy').middleware('auth')
-
-// ---- CMS Dashboard ----
-Route.on('/cms').render('cms/index')

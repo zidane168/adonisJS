@@ -48,6 +48,37 @@ Encore.setPublicPath('/assets')
 Encore.addEntry('app', './resources/js/app.js')
 Encore.addStyleEntry('style', './resources/css/style.css')
 
+Encore.addEntry('cms', [
+    './resources/css/cms/bootstrap.min.css',
+    './resources/css/cms/waves.min.css',
+    './resources/css/cms/themifyIcons.css',
+    './resources/css/cms/fontAwesomen.min.css',
+    './resources/css/cms/fontAwesome.min.css',
+    './resources/css/cms/jquery.mCustomScrollbar.css',
+    './resources/css/cms/style.css',
+  ]
+)
+
+//   './resources/js/cms/jquery.min.js',
+//   './resources/js/cms/jquery-ui.min.js',
+//   './resources/js/cms/popper.min.js',
+//   './resources/js/cms/waves.min.js',
+
+//   './resources/js/cms/jquery.slimscroll.js',
+//   './resources/js/cms/jquery.mCustomScrollbar.concat.min.js',
+//   './resources/js/cms/pcoded.min.js',
+//   './resources/js/cms/vertical-layout.min.js',
+//   './resources/js/cms/script.js',
+// ])
+
+// Encore.addStyleEntry('bootstrap.min', './resources/css/cms/bootstrap.min.css')
+// Encore.addStyleEntry('waves.min', './resources/css/cms/waves.min.css')
+// Encore.addStyleEntry('themifyIcons.min', './resources/css/cms/themifyIcons.min.css')
+// Encore.addStyleEntry('fontAwesomen.min', './resources/css/cms/fontAwesomen.min.css')
+// Encore.addStyleEntry('fontAwesome.min', './resources/css/cms/fontAwesome.min.css')
+// Encore.addStyleEntry('jquery.mCustomScrollbar', './resources/css/cms/jquery.mCustomScrollbar.css')
+// Encore.addStyleEntry('cmsStyle', './resources/css/cms/style.css')
+
 /*
 |--------------------------------------------------------------------------
 | Copy assets
