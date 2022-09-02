@@ -59,9 +59,7 @@ Encore.addStyleEntry('cms', [
 ])
 
 
-Encore.addEntry('cmsScript', [
-  // './resources/cms/js/jquery.min.js',
-  // './resources/cms/js/jquery-ui.min.js',
+Encore.addEntry('cmsScript', [ 
   './resources/cms/js/popper.min.js',
   './resources/cms/js/waves.min.js',
 
