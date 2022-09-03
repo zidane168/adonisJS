@@ -1,53 +1,118 @@
 @layout('cms/layouts/app')
  
-@section('content')  
-    <div class="pcoded-inner-content">
-        <div class="pcoded-content">
-            <!-- Page-header start -->
-            <div class="page-header">
-                <div class="page-block">
-                    <div class="row align-items-center">
-                        <div class="col-md-8">
-                            <div class="page-header-title">
-                                <h5 class="m-b-10">Basic Form Inputs</h5>
-                                <p class="m-b-0">Lorem Ipsum is simply dummy text of the printing</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <ul class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="index.html"> <i class="fa fa-home"></i> </a>
-                                </li>
-                                <li class="breadcrumb-item"><a href="#!">Form Components</a>
-                                </li>
-                                <li class="breadcrumb-item"><a href="#!">Basic Form Inputs</a>
-                                </li>
-                            </ul>
-                        </div>
+@section('content')    
+    <!-- Page-header start -->
+    <div class="page-header">
+        <div class="page-block">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="page-header-title">
+                        <h5 class="m-b-10">Bootstrap Basic Tables</h5>
+                        <p class="m-b-0">Lorem Ipsum is simply dummy text of the printing</p>
                     </div>
                 </div>
-            </div>
-            <!-- Page-header end -->
-            <div class="pcoded-inner-content">
-                <!-- Main-body start -->
-                <div class="main-body">
-                    <div class="page-wrapper">
-
-                        <!-- Page body start -->
-                        <div class="page-body">
-                            
-                            <div class="row">
-                               
-                            </div>
-                        </div>
-                        <!-- Page body end -->
-                    </div>
-                </div>
-                <!-- Main-body end -->
-                <div id="styleSelector">
-
+                <div class="col-md-4">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index.html"> <i class="fa fa-home"></i> </a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="#!">Bootstrap Tables</a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="#!">Basic Tables</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Page-header end -->
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-body start -->
+                <div class="page-body">
+                   
+                    <!-- Hover table card start -->
+                    <div class="card">
+                        <div class="text-right">
+                            <a href="/cms/members/add" role="button" class="btn btn-success"> Add </a>
+                        </div>
+
+                        <div class="card-header">
+                            <h5>Members</h5> 
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    {{--  <li><i class="fa fa-trash close-card"></i></li>  --}}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-block table-border-style">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Username</th>
+                                            <th>Enabled</th>
+                                            <th>Created</th>
+                                            <th>Modified</th>
+                                            <th>Operation</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                            <td>true</td>
+                                            <td>2022-09-03</td>
+                                            <td>2022-09-03</td>
+                                            <td>
+                                                <a href="/cms/members/view/1" role="button" class="btn btn-info"> View </a>
+                                                <a href="/cms/members/edit/1" role="button" class="btn btn-warning"> Edit </a>
+                                                <a href="/cms/members/delete/1" role="button" class="btn btn-danger"> Delete </a>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                            <td>true</td>
+                                            <td>2022-09-03</td>
+                                            <td>2022-09-03</td>
+                                            <td>
+                                                <a href="/cms/members/view/2" role="button" class="btn btn-info"> View </a>
+                                                <a href="/cms/members/edit/2" role="button" class="btn btn-warning"> Edit </a>
+                                                <a href="/cms/members/delete/2" role="button" class="btn btn-danger"> Delete </a>
+
+                                            </td>
+                                        </tr> 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Hover table card end --> 
+
+                </div>
+                <!-- Page-body end -->
+            </div>
+        </div>
+        <!-- Main-body end -->
+
+        <div id="styleSelector">
+
+        </div>
+    </div>
+
 @endsection

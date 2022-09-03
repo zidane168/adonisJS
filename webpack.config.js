@@ -55,7 +55,8 @@ Encore.addStyleEntry('cms', [
   './resources/cms/css/fontAwesomen.min.css',
   './resources/cms/css/fontAwesome.min.css',
   './resources/cms/css/jquery.mCustomScrollbar.css',
-  './resources/cms/css/style.css'
+  './resources/cms/css/style.css',
+  './resources/cms/css/main.css',
 ])
 
 

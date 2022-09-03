@@ -83,7 +83,9 @@ Route.on('/cms').render('cms/index', { dashboards_active: 'active' })
 
 // Member form
 Route.on('/cms/members').render('cms/members/index', { members_active: 'active' }) 
-
+Route.on('/cms/members/add').render('cms/members/add', { members_active: 'active' })
+Route.on('/cms/members/edit/:id').render('cms/members/edit', { members_active: 'active' })
+Route.on('/cms/members/view/:id').render('cms/members/view', { members_active: 'active' })
 
 Route.on('/register').render('auth/register')
 Route.on('/login').render('auth/login')
