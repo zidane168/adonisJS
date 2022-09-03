@@ -79,7 +79,11 @@ Route.resource('/pets', 'PetsController').apiOnly();
 
 
 // ---- CMS Dashboard ----
-Route.on('/cms').render('cms/index')
+Route.on('/cms').render('cms/index', { dashboards_active: 'active' })
+
+// Member form
+Route.on('/cms/members').render('cms/members/index', { members_active: 'active' }) 
+
 
 Route.on('/register').render('auth/register')
 Route.on('/login').render('auth/login')
@@ -92,6 +96,8 @@ Route.on('/profile/edit').render('profile/edit').middleware('auth')
 // dung middleware('silentAuth')  de co the show login data username on trang homepage, show ten auth khi da login 
 
 Route.on('/introduce').render('introduces/index').middleware('silentAuth')   
+
+
 
 // dung middleware('auth') de force user login when chua co thong tin login
 

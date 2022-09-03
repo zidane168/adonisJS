@@ -2,25 +2,25 @@
   "entrypoints": {
     "app": {
       "css": [
-        "http://localhost:54979/assets/app.css"
+        "http://localhost:8080/assets/app.css"
       ],
       "js": [
-        "http://localhost:54979/assets/app.js"
+        "http://localhost:8080/assets/app.js"
       ]
     },
     "cmsScript": {
       "js": [
-        "http://localhost:54979/assets/cmsScript.js"
+        "http://localhost:8080/assets/cmsScript.js"
       ]
     },
     "style": {
       "css": [
-        "http://localhost:54979/assets/style.css"
+        "http://localhost:8080/assets/style.css"
       ]
     },
     "cms": {
       "css": [
-        "http://localhost:54979/assets/cms.css"
+        "http://localhost:8080/assets/cms.css"
       ]
     }
   }
